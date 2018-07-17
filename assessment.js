@@ -30,11 +30,11 @@ message['text'] = "Hello there!!";
 let adjustCount = {
   upVote: function(num1) {
     num1++;
-    console.log(num1);
+    return num1;
   },
   downVote: function(num1) {
     num1--;
-    console.log(num1);
+    return num1;
   }
 };
 
@@ -63,12 +63,12 @@ let myArray = [1, 2, 3, 4];
 // CODE HERE
 
 let myArrayCopy = [];
-// for(i = 0; i < myArray.length; i++){
-//   myArrayCopy += myArray[i]; 
-// }
-for(i in myArray) {
-  myArrayCopy += myArray[i];
+for(i = 0; i < myArray.length; i++){
+  myArrayCopy.push(myArray[i]); 
 }
+// for(i in myArray) {
+//   myArrayCopy += myArray[i];
+// }
 
 console.log(myArrayCopy);
 
@@ -117,8 +117,9 @@ let indexes = [];
 
 function indexFinder(){
   for(i = 0; i < randomNumbers.length; i++) {
-    indexes+=randomNumbers[i];
-    return indexes;
+    indexes.push(i);
   }
+  console.log(i);
+  return indexes;
 };
-console.log(indexes);
+indexFinder();
